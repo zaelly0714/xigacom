@@ -1,5 +1,5 @@
 'use strict';
-// KINGSMAN LABEL 1팀 LIVE status backend — YouTube Data API server.
+// cigacom LIVE status backend — public/index.html and config/members.json remain unchanged.
 // Requires Node.js 20+ and the YOUTUBE_API_KEY environment variable.
 const http = require('node:http');
 const fs = require('node:fs');
@@ -12,13 +12,13 @@ const PUBLIC_DIR = path.join(__dirname, 'public');
 const API_BASE = 'https://www.googleapis.com/youtube/v3';
 // Tune via Render environment variables if needed; these conservative defaults
 // are shared by ALL visitors, never per visitor.
-const SEARCH_DAILY_BUDGET = Math.min(90, Math.max(0, Number(process.env.SEARCH_DAILY_BUDGET ?? 10) || 0));
-const UPLOADS_REFRESH_MS = Math.max(120000, Number(process.env.UPLOADS_REFRESH_MS || 1200000));
-const VIDEO_REFRESH_MS = Math.max(60000, Number(process.env.VIDEO_REFRESH_MS || 180000));
+const SEARCH_DAILY_BUDGET = Math.min(90, Math.max(0, Number(process.env.SEARCH_DAILY_BUDGET ?? 80) || 0));
+const UPLOADS_REFRESH_MS = Math.max(120000, Number(process.env.UPLOADS_REFRESH_MS || 480000));
+const VIDEO_REFRESH_MS = Math.max(60000, Number(process.env.VIDEO_REFRESH_MS || 120000));
 const SEARCH_REFRESH_MS = SEARCH_DAILY_BUDGET ? Math.ceil(86400000 / SEARCH_DAILY_BUDGET) : Infinity;
 const MAX_AGE_MS = 30 * 60000;
 const BACKGROUND_TICK_MS = 30000;
-const MAX_VIDEO_IDS_PER_CHANNEL = 8;
+const MAX_VIDEO_IDS_PER_CHANNEL = 12;
 const UPLOADS_RETRY_MS = 6 * 60 * 60 * 1000; // Re-try unavailable upload playlists every 6h
 const configured = JSON.parse(fs.readFileSync(path.join(__dirname, 'config/members.json'), 'utf8'));
 const validId = id => /^UC[A-Za-z0-9_-]{22}$/.test(id);
@@ -272,7 +272,7 @@ function statusPayload() {
     searchesToday, searchDailyBudget: SEARCH_DAILY_BUDGET,
     nextSearchAt: Number.isFinite(SEARCH_REFRESH_MS) && searchAt ? new Date(searchAt + SEARCH_REFRESH_MS).toISOString() : null,
     lastError: lastSyncError ? '일부 채널을 최신 상태로 확인하지 못했을 수 있습니다.' : '',
-    note: '업로드 목록 약 20분 간격, 알려진 영상 약 3분 간격 확인. 업로드 목록이 없는 채널은 검색 API로 우선 확인합니다.'
+    note: '업로드 목록 약 8분 간격, 알려진 영상 약 2분 간격 확인. 업로드 목록이 없는 채널은 검색 API로 우선 확인합니다.'
   };
 }
 function json(res, status, payload) {
