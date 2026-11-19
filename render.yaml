@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: kingsmanlable-t1-liveon
+    runtime: node
+    plan: free
+    buildCommand: npm install --omit=dev
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: YOUTUBE_API_KEY
+        sync: false
+      - key: SEARCH_DAILY_BUDGET
+        value: 10
+      - key: UPLOADS_REFRESH_MS
+        value: 1200000
+      - key: VIDEO_REFRESH_MS
+        value: 180000

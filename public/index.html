@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="KINGSMAN LABEL 1팀의 유튜브 LIVE 현황을 한눈에 확인하세요.">
+  <title>KINGSMAN LABEL 1팀 뱅온 현 | 라이브 방송 현황</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink:#1c2027;
+      --muted:#7d8490;
+      --line:#e9ebef;
+      --soft:#f6f7f9;
+      --red:#f0444b;
+      --red-dark:#d92a34;
+      --radius:18px;
+      font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;
+      font-synthesis:none;
+      color:var(--ink);
+      background:#fff;
+    }
+    *,*::before,*::after {box-sizing:border-box;}
+    body {margin:0; min-width:300px;}
+    button,a {-webkit-tap-highlight-color:transparent;}
+    button {font:inherit;}
+    button:focus-visible,a:focus-visible {outline:3px solid #ffb6bb;outline-offset:3px;}
+    [hidden] {display:none!important;}
+    .topbar {border-bottom:1px solid var(--line); background:#fff;}
+    .topbar-inner {max-width:1192px; margin:auto; padding:19px 24px; display:flex; justify-content:space-between; align-items:center; gap:12px;}
+    .brand {display:flex; align-items:center; gap:11px; min-width:0; text-decoration:none; color:inherit;}
+    .brand-mark {display:grid; place-items:center; flex:0 0 37px; height:37px; border:1px solid #202329; border-radius:50%; font-family:Georgia,serif; font-size:22px; line-height:1; font-weight:700;}
+    .brand-name {font-family: inherit; font-size: 20px; font-weight: 830; letter-spacing: -1.3px; line-height: 1.25; white-space: nowrap;}
+    .brand-name small {display:block; font:700 8px/1.5 -apple-system,BlinkMacSystemFont,"Noto Sans KR",sans-serif; color:#9ba0a9; letter-spacing:.24em; margin-top:4px;}
+    .topbar-meta {display:flex; gap:8px; align-items:center; font-size:11px; font-weight:750; color:#777d85; letter-spacing:.08em; white-space:nowrap;}
+    .topbar-meta span {width:6px; height:6px; background:#f0444b; border-radius:50%;}
+    .container {max-width:1192px; margin:auto; padding:22px 24px 66px;}
+    .banner {height:clamp(128px,20vw,229px); border-radius:19px; overflow:hidden; position:relative; background:#221b1c url('/assets/banner.jpg.png') center 49% / cover no-repeat;}
+    .banner::after {content:""; pointer-events:none; position:absolute; inset:0; background:linear-gradient(0deg,#00000020,transparent 55%);}
+    .welcome {display:flex; justify-content:space-between; align-items:flex-end; gap:16px; padding:35px 1px 27px;}
+    .eyebrow {margin:0 0 10px; color:#9299a4; font-size:11px; font-weight:800; letter-spacing:.17em;}
+    .welcome h1 {margin:0; font-size:clamp(25px,3.5vw,36px); letter-spacing:-1.3px; font-weight:830; line-height:1.25;}
+    .welcome h1 .period {color:var(--red);}
+    .intro {margin:10px 0 0; font-size:13px; line-height:1.6; color:#878d97;}
+    .count-box {display:flex; align-items:center; gap:13px; flex:0 0 auto; padding:14px 19px; background:#f7f8fa; border:1px solid #f1f2f4; border-radius:13px;}
+    .count-dot {width:10px; height:10px; background:var(--red); border:3px solid #ffd5d6; border-radius:50%;}
+    .count-box .counter {font-weight:820; font-size:25px; letter-spacing:-1px; font-variant-numeric:tabular-nums; white-space:nowrap;}
+    .count-box .counter .total {font-weight:600; color:#c0c3c9; font-size:17px;}
+    .count-box .counter-label {font-size:11px; color:#8c919a; font-weight:700; margin-top:2px;}
+    .utility {display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 17px; background:#f8f9fa; border:1px solid #f0f1f4; border-radius:13px; margin-bottom:22px;}
+    .utility-left {display:flex; align-items:center; gap:10px; min-width:0;}
+    .status-indicator {display:flex; align-items:center; gap:6px; flex:0 0 auto; color:#626b78; background:#fff; border:1px solid #e8ebee; padding:6px 10px; font-size:11px; font-weight:750; border-radius:30px; white-space:nowrap;}
+    .status-indicator .status-icon {height:6px; width:6px; border-radius:50%; background:#53b78a;}
+    .status-indicator.preview .status-icon {background:#dba44e;}
+    .checked-at {font-size:11px; color:#9299a2; line-height:1.4; overflow-wrap:anywhere;}
+    .refresh {border:1px solid #e3e5ea; background:#fff; color:#50555f; cursor:pointer; padding:8px 12px; border-radius:9px; font-size:11px; font-weight:800; white-space:nowrap; display:flex; align-items:center; gap:6px;}
+    .refresh:hover {border-color:#ccd0d7; background:#fdfdfd;}
+    .refresh:disabled {opacity:.6; cursor:wait;}
+    .notice {padding:14px 15px; border:1px solid #f3dfb4; color:#805d2b; border-radius:12px; background:#fffbf2; font-size:12px; line-height:1.7; margin:0 0 20px;}
+    .section-head {display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:13px; margin:2px 0 16px;}
+    .section-title {margin:0; font-size:18px; letter-spacing:-.55px; font-weight:820;}
+    .section-sub {margin:5px 0 0; font-size:11px; color:#969ba3;}
+    .filters {display:inline-flex; align-items:center; gap:3px; padding:4px; background:#f5f6f7; border-radius:10px;}
+    .filter {border:0; border-radius:7px; background:transparent; color:#8b919b; font-size:12px; font-weight:700; padding:8px 13px; cursor:pointer; white-space:nowrap;}
+    .filter[aria-pressed="true"] {background:#fff; color:#22262c; box-shadow:0 1px 5px #17213412;}
+    .grid {display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px;}
+    .card {min-width:0; overflow:hidden; background:#fff; border:1px solid #e9ebf0; border-radius:var(--radius); display:flex; flex-direction:column; transition:transform .2s,box-shadow .2s,border-color .2s;}
+    .card:hover {transform:translateY(-3px); box-shadow:0 10px 22px #212a4010; border-color:#e2e5eb;}
+    .thumb {aspect-ratio:16/10; width:100%; display:flex; justify-content:center; align-items:center; position:relative; background:#f4f5f7; overflow:hidden;}
+    .thumb img {width:100%; height:100%; object-fit:contain; background:#161616; display:block;}
+    .thumb .onair {position:absolute; top:11px; left:11px; background:var(--red); color:#fff; padding:6px 9px; border-radius:7px; font-size:10px; font-weight:850; letter-spacing:.04em; box-shadow:0 2px 5px #0002;}
+    .thumb .onair::before {content:""; display:inline-block; width:6px; height:6px; border-radius:50%; background:#fff; margin-right:5px; vertical-align:1px;}
+    .no-video {display:flex; flex-direction:column; align-items:center; gap:9px; color:#b6bbc3; font-size:12px; font-weight:650;}
+    .no-video svg {width:32px; height:32px; stroke:#cbd0d7; fill:none; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;}
+    .card-body {display:flex; flex-direction:column; flex:1; padding:16px; min-height:179px;}
+    .status {display:flex; gap:6px; align-items:center; font-size:10px; font-weight:800; letter-spacing:.05em; color:#9da2aa;}
+    .status .dot {width:7px; height:7px; border-radius:50%; background:#c9cdd3; flex:0 0 auto;}
+    .card.live .status {color:#ec444b;}
+    .card.live .status .dot {background:var(--red); box-shadow:0 0 0 3px #fde6e8;}
+    .card.error .status,.card.stale .status {color:#b88a46;}
+    .card.error .status .dot,.card.stale .status .dot {background:#dca354;}
+    .name {font-size:17px; letter-spacing:-.6px; font-weight:800; margin:9px 0 0; line-height:1.35; overflow-wrap:anywhere;}
+    .desc {font-size:12px; color:#868c97; line-height:1.55; margin:9px 0 14px; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; overflow-wrap:anywhere; min-height:37px;}
+    .card.live .desc {color:#626976;}
+    .card-footer {margin-top:auto;}
+    .watch {display:flex; align-items:center; justify-content:center; gap:6px; width:100%; min-height:39px; padding:9px 6px; text-align:center; background:var(--red); color:#fff; border:1px solid var(--red); border-radius:9px; text-decoration:none; font-size:12px; font-weight:800;}
+    .watch:hover {background:var(--red-dark); border-color:var(--red-dark);}
+    .watch.disabled {background:#fee9ea; color:#be7478; border-color:#fee9ea; cursor:default;}
+    .channel {display:flex; align-items:center; justify-content:center; min-height:39px; width:100%; border:1px solid #e9ebee; border-radius:9px; color:#777f8a; text-decoration:none; font-size:12px; font-weight:750;}
+    .channel:hover {background:#f8f8fa; color:#333b47;}
+    .standby {display:flex; align-items:center; justify-content:center; min-height:39px; border:1px solid #f0f1f3; background:#fafafa; color:#b5bac3; border-radius:9px; font-size:12px; font-weight:650;}
+    .empty {grid-column:1/-1; padding:45px 15px; text-align:center; background:#fafbfc; border:1px dashed #e6e8ec; border-radius:16px;}
+    .empty strong {display:block; font-size:15px;}
+    .empty p {color:#9a9fa8; font-size:12px; margin:10px 0 0;}
+    footer {border-top:1px solid #eceef1; padding:23px 5px 0; margin-top:41px; display:flex; justify-content:space-between; gap:13px; flex-wrap:wrap; font-size:11px; color:#9aa0aa; line-height:1.7;}
+    footer a {color:#7d8490; text-underline-offset:3px;}
+    @media (min-width:600px) and (max-width:1050px) {.grid {grid-template-columns:repeat(3,minmax(0,1fr));}}
+    @media (max-width:599px) {
+      .brand-name {font-size:clamp(14px,3.8vw,17px);letter-spacing:-.8px;white-space:normal;}
+      .topbar-meta {display:none;}
+      .topbar-inner {padding:15px 15px;}
+      .brand-mark {flex-basis:32px; height:32px; font-size:19px;}
+      .brand-name {font-size:14px;}
+      .brand-name small {font-size:7px;}
+      .topbar-meta {font-size:9px; letter-spacing:.03em;}
+      .container {padding:13px 12px 45px;}
+      .banner {border-radius:13px; height:clamp(103px,25vw,151px);}
+      .welcome {padding:25px 2px 23px; gap:12px; align-items:center;}
+      .welcome h1 {font-size:24px; letter-spacing:-1px;}
+      .eyebrow {font-size:9px; margin-bottom:8px;}
+      .intro {font-size:11px; max-width:220px; margin-top:8px;}
+      .count-box {gap:7px; padding:10px 12px; border-radius:11px;}
+      .count-dot {width:8px; height:8px; border-width:2px;}
+      .count-box .counter {font-size:20px;}
+      .count-box .counter .total {font-size:13px;}
+      .count-box .counter-label {font-size:9px;}
+      .utility {padding:10px 11px; margin-bottom:22px; gap:8px;}
+      .status-indicator {font-size:10px; padding:6px 8px;}
+      .checked-at {font-size:10px;}
+      .refresh {font-size:0; padding:8px; gap:0;}
+      .refresh svg {width:15px; height:15px;}
+      .section-title {font-size:16px;}
+      .section-sub {font-size:10px;}
+      .filters {width:100%; display:grid; grid-template-columns:repeat(3,1fr);}
+      .filter {padding:9px 3px; font-size:11px;}
+      .grid {grid-template-columns:repeat(2,minmax(0,1fr)); gap:11px;}
+      .card {border-radius:13px;}
+      .thumb {aspect-ratio:16/11;}
+      .thumb .onair {top:7px; left:7px; padding:5px 7px; font-size:9px;}
+      .no-video {gap:6px; font-size:10px;}
+      .no-video svg {width:26px; height:26px;}
+      .card-body {padding:12px 11px; min-height:159px;}
+      .name {font-size:14px; margin-top:7px;}
+      .desc {font-size:10.5px; line-height:1.45; margin:7px 0 11px; min-height:31px;}
+      .watch,.channel,.standby {min-height:35px; font-size:11px; border-radius:8px;}
+      footer {margin-top:30px; padding-top:18px; font-size:10px;}
+    }
+    @media (max-width:365px) {
+      .topbar-meta {display:none;}
+      .welcome h1 {font-size:21px;}
+      .intro {font-size:10px;}
+      .count-box {padding:8px 9px;}
+      .card-body {padding:10px 9px;}
+      .name {font-size:13px;}
+      .watch,.channel,.standby {font-size:10px;}
+    }
+    @media (prefers-reduced-motion:reduce) {*,*::before,*::after{animation:none!important;transition:none!important;}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/" aria-label="킹스맨레이블 홈">
+        <span class="brand-name">KINGSMAN LABEL 1팀 뱅온 현<small>LIVE BOARD</small></span>
+      </a>
+      <div class="topbar-meta"><span aria-hidden="true"></span>YOUTUBE LIVE</div>
+    </div>
+  </header>
+  <main class="container">
+    <div class="banner" role="img" aria-label="KINGSMAN LABEL 배너 이미지"></div>
+    <section class="welcome" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">LIVE STATUS · KINGSMAN LABEL</p>
+        <h1 id="page-title">라이브 방송 현황<span class="period">.</span></h1>
+        <p class="intro">1팀 플레이어들의 유튜브 방송을 한눈에 확인하세요.</p>
+      </div>
+      <div class="count-box" aria-live="polite">
+        <span class="count-dot" aria-hidden="true"></span>
+        <div>
+          <div class="counter"><span id="live-count">–</span> <span class="total">/ <span id="total-count">–</span></span></div>
+          <div class="counter-label">현재 LIVE</div>
+        </div>
+      </div>
+    </section>
+    <div class="utility">
+      <div class="utility-left">
+        <span class="status-indicator" id="mode-label"><span class="status-icon" aria-hidden="true"></span><span id="mode-text">연결 중</span></span>
+        <span class="checked-at" id="checked-at">방송 정보를 불러오는 중...</span>
+      </div>
+      <button id="refresh" type="button" class="refresh" aria-label="방송 상태 새로고침" title="방송 상태 새로고침">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg> 새로고침
+      </button>
+    </div>
+    <div id="notice" class="notice" role="status" hidden></div>
+    <div class="section-head">
+      <div><h2 class="section-title">멤버별 방송</h2><p class="section-sub" id="summary">라이브 상태를 확인하고 있습니다.</p></div>
+      <div class="filters" role="group" aria-label="방송 상태 필터">
+        <button type="button" class="filter" data-filter="all" aria-pressed="true">전체</button>
+        <button type="button" class="filter" data-filter="live" aria-pressed="false">LIVE</button>
+        <button type="button" class="filter" data-filter="offline" aria-pressed="false">방송 중 아님</button>
+      </div>
+    </div>
+    <section id="grid" class="grid" aria-live="polite" aria-label="멤버별 유튜브 방송 현황">
+      <div class="empty"><strong>방송 정보를 불러오는 중이에요.</strong><p>잠시 후 멤버별 상태가 표시됩니다.</p></div>
+    </section>
+    <footer><span>방송 정보: YouTube Data API · 화면은 1분마다 자동 갱신됩니다.<br>신규 LIVE 감지는 YouTube API 한도에 따라 늦어질 수 있습니다.</span><span><a href="https://open.kakao.com/o/svpbfKXi" target="_blank" rel="noopener noreferrer">오류 신고</a></span></footer>
+  <script>
+    const DEMO = new URLSearchParams(location.search).get('demo') === '1';
+    const EXAMPLE = [
+      {"id":"t1_01","name":"김인환","status":"offline","live":false},
+      {"id":"t1_02","name":"태준","status":"live","live":true,"title":"디자인 확인용 예시 방송입니다.","image":"","videoUrl":""},
+      {"id":"t1_03","name":"창현","status":"offline","live":false},
+      {"id":"t1_04","name":"유원","status":"offline","live":false},
+      {"id":"t1_05","name":"이준","status":"live","live":true,"title":"디자인 확인용 예시 방송입니다.","image":"","videoUrl":""},
+      {"id":"t1_06","name":"차유현","status":"offline","live":false},
+      {"id":"t1_07","name":"윤호","status":"offline","live":false},
+      {"id":"t1_08","name":"천우","status":"offline","live":false},
+      {"id":"t1_09","name":"리우","status":"offline","live":false},
+      {"id":"t1_10","name":"여운 1","status":"offline","live":false},
+      {"id":"t1_11","name":"여운 2","status":"offline","live":false},
+      {"id":"t1_12","name":"도일","status":"offline","live":false},
+      {"id":"t1_13","name":"재현","status":"offline","live":false},
+      {"id":"t1_14","name":"리누","status":"offline","live":false},
+      {"id":"t1_15","name":"환","status":"offline","live":false},
+      {"id":"t1_16","name":"박현준프로맥스","status":"offline","live":false},
+      {"id":"t1_17","name":"현준 2","status":"offline","live":false},
+      {"id":"t1_18","name":"하준","status":"offline","live":false},
+      {"id":"t1_19","name":"시우","status":"offline","live":false},
+      {"id":"t1_20","name":"기현","status":"offline","live":false},
+      {"id":"t1_21","name":"건리버","status":"offline","live":false},
+      {"id":"t1_22","name":"재건","status":"offline","live":false},
+      {"id":"t1_23","name":"민혁","status":"offline","live":false},
+      {"id":"t1_24","name":"원석","status":"offline","live":false}
+    ];
+    const grid = document.querySelector('#grid');
+    const escapeHtml = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const isLive = m => m.status === 'live' && m.live === true;
+    const STATUS_LABEL = {live:'LIVE',offline:'OFFLINE',setup:'채널 미등록',checking:'확인 중',error:'확인 실패',stale:'확인 지연'};
+    const STATUS_MESSAGE = {offline:'현재 진행 중인 라이브 방송이 없습니다.',setup:'아직 유튜브 채널이 등록되지 않았습니다.',checking:'방송 상태를 확인 중입니다.',error:'유튜브 방송 정보를 확인하지 못했습니다.',stale:'마지막 확인 결과가 오래되었습니다.'};
+    let latestMembers = [];
+    let activeFilter = 'all';
+    function safeYoutube(url) {
+      try {const u = new URL(url);return u.protocol === 'https:' && ['www.youtube.com','youtube.com'].includes(u.hostname) ? u.href : '';} catch {return '';}
+    }
+    function safeImage(url) {
+      if (typeof url === 'string' && /^\/assets\/[a-z0-9.-]+\.jpg$/i.test(url)) return url;
+      try {const u = new URL(url);return u.protocol === 'https:' && (u.hostname === 'i.ytimg.com' || u.hostname === 'img.youtube.com' || u.hostname.endsWith('.ytimg.com')) ? u.href : '';} catch {return '';}
+    }
+    const standbyIcon = '<svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="8" width="22" height="16" rx="4"/><path d="M12 27h8M16 24v3M13 13l7 3-7 3z"/></svg>';
+    function memberCard(m) {
+      const status = Object.hasOwn(STATUS_LABEL,m.status) ? m.status : 'checking';
+      const live = isLive(m);
+      const klass = live ? 'live' : status;
+      const image = live ? safeImage(m.image) : '';
+      const title = live ? (m.title || '유튜브 라이브 방송 중입니다.') : (m.message || STATUS_MESSAGE[status] || STATUS_MESSAGE.checking);
+      const thumb = image ? `<img loading="lazy" src="${escapeHtml(image)}" alt="${escapeHtml(m.name)} 라이브 썸네일">` : `<span class="no-video">${standbyIcon}<span>${live ? '방송 중' : status === 'offline' ? '방송 쉬는 중' : '방송 정보 확인 중'}</span></span>`;
+      const video = live ? safeYoutube(m.videoUrl) : '';
+      const channel = safeYoutube(m.channelUrl);
+      const footer = live ? (video ? `<a class="watch" href="${escapeHtml(video)}" target="_blank" rel="noopener noreferrer">방송 보러가기 <span aria-hidden="true">↗</span></a>` : '<span class="watch disabled">미리보기 방송</span>') : (channel ? `<a class="channel" href="${escapeHtml(channel)}" target="_blank" rel="noopener noreferrer">유튜브 채널 보기 ↗</a>` : '<span class="standby">방송 대기 중</span>');
+      return `<article class="card ${klass}"><div class="thumb">${thumb}${live ? '<span class="onair">LIVE</span>' : ''}</div><div class="card-body"><div class="status"><span class="dot" aria-hidden="true"></span>${live ? 'LIVE NOW' : STATUS_LABEL[status]}</div><h3 class="name">${escapeHtml(m.name)}</h3><p class="desc">${escapeHtml(title)}</p><div class="card-footer">${footer}</div></div></article>`;
+    }
+    function renderMembers() {
+      const sorted = [...latestMembers].sort((a,b) => Number(isLive(b)) - Number(isLive(a)));
+      const shown = sorted.filter(m => activeFilter === 'all' || (activeFilter === 'live' ? isLive(m) : !isLive(m)));
+      grid.innerHTML = shown.length ? shown.map(memberCard).join('') : `<div class="empty"><strong>${activeFilter === 'live' ? '현재 방송 중인 멤버가 없어요.' : '표시할 멤버가 없습니다.'}</strong><p>${activeFilter === 'live' ? '방송이 시작되면 이곳에 표시됩니다.' : '다른 필터를 선택해 주세요.'}</p></div>`;
+      const n = latestMembers.filter(isLive).length;
+      document.querySelector('#live-count').textContent = String(n);
+      document.querySelector('#total-count').textContent = String(latestMembers.length);
+      document.querySelector('#summary').textContent = `전체 ${latestMembers.length}명 · LIVE ${n}명 · LIVE 멤버 우선 표시`;
+    }
+    document.querySelectorAll('.filter').forEach(button => button.addEventListener('click', () => {
+      activeFilter = button.dataset.filter;
+      document.querySelectorAll('.filter').forEach(item => item.setAttribute('aria-pressed',String(item === button)));
+      renderMembers();
+    }));
+    let busy = false;
+    async function refresh() {
+      if (DEMO) {
+        latestMembers = EXAMPLE;
+        renderMembers();
+        document.querySelector('#mode-text').textContent = '디자인 예시';
+        document.querySelector('#mode-label').classList.add('preview');
+        document.querySelector('#checked-at').textContent = '실제 방송 정보가 아닙니다.';
+        const notice = document.querySelector('#notice');
+        notice.hidden = false;
+        notice.textContent = '이 화면은 디자인 미리보기입니다. 실제 방송 현황은 주소 끝의 ?demo=1을 삭제한 후 확인하세요.';
+        return;
+      }
+      if (busy) return;
+      busy = true;
+      const button = document.querySelector('#refresh');
+      button.disabled = true;
+      try {
+        const response = await fetch('/api/live',{cache:'no-store'});
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const payload = await response.json();
+        if (!Array.isArray(payload.members)) throw new Error('잘못된 서버 응답');
+        latestMembers = payload.members;
+        renderMembers();
+        const missingKey = payload.mode === 'needs_api_key';
+        document.querySelector('#mode-text').textContent = missingKey ? 'API 키 필요' : '자동 연동 중';
+        const setupCount = latestMembers.filter(m=>m.status === 'setup').length;
+        const notice = document.querySelector('#notice');
+        if (missingKey) notice.textContent = 'Render의 Environment 메뉴에서 YOUTUBE_API_KEY를 등록해야 유튜브 방송을 자동 확인할 수 있습니다.';
+        else if (latestMembers.length > 0 && setupCount === latestMembers.length) notice.textContent = 'GitHub의 config/members.json 파일에 유튜브 채널 ID 또는 @핸들을 입력해 주세요.';
+        else if (payload.lastError) notice.textContent = payload.lastError;
+        notice.hidden = !(missingKey || (latestMembers.length > 0 && setupCount === latestMembers.length) || payload.lastError);
+        const at = new Date(payload.serverTime);
+        document.querySelector('#checked-at').textContent = `페이지 확인 ${at.toLocaleTimeString('ko-KR',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit'})} · 1분마다 자동 갱신`;
+      } catch (err) {
+        const notice = document.querySelector('#notice');
+        notice.hidden = false;
+        notice.textContent = `서버에 연결할 수 없습니다. 새로고침해 주세요. (${err.message})`;
+        document.querySelector('#checked-at').textContent = '연결을 다시 확인해 주세요.';
+      } finally {
+        button.disabled = false;
+        busy = false;
+      }
+    }
+    document.querySelector('#refresh').addEventListener('click',() => {refresh();setTimeout(refresh,3000);});
+    refresh();
+    if (!DEMO) setInterval(refresh,60*1000);
+  </script>
+</body>
+</html>
